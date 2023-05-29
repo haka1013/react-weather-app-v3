@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
 
 import "./App.css";
+import Weather from "./Weather.js";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <button type="button" className="btn btn-primary">
         Primary
       </button>
+      <Weather />
       <footer>
         This page was coded by Kat Haas 🐰 and is{" "}
         <a
