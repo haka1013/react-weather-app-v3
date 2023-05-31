@@ -2,13 +2,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
 
 import "./App.css";
-import Search from "./Search.js";
 import Weather from "./Weather.js";
 
 function App() {
   return (
     <div className="App container">
-      <Search />
       <Weather />
       <footer>
         This page was coded by Kat Haas 🐰 and is{" "}

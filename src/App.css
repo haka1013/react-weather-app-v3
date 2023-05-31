@@ -1,5 +1,9 @@
 .App {
-  border: 1px solid lightcoral;
-  border-radius: 15px;
-  max-width: 700px;
+  max-width: 800px;
+  font-family: Inter, helvetica, arial, sans-serif;
+}
+
+.App footer {
+  font-size: 12px;
+  text-align: center;
 }
