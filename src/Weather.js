@@ -19,41 +19,42 @@ export default function Weather() {
             <input
               type="submit"
               value="Search"
-              className="btn btn-primary w-100"
+              className="btn btn-info w-100 text-white"
             />
           </div>
         </div>
       </form>
-      <h1>Bournemouth</h1>
-      <h2>19 °C</h2>
+      <h1>Bournemouth, Bournemouth, England, United Kingdom</h1>
+      <ul>
+        <li className="weather-description">Sonnig</li>
+        <li className="weather-description">Montag, 16:40</li>
+        <li className="weather-description">
+          05:03{" "}
+          <img
+            src="https://tse1.mm.bing.net/th?id=OIP.vasXASdmljtoBvFafLSiDwHaHa&pid=Api"
+            alt="Sunrise & Sunset"
+            className="sunrise-sunset"
+          ></img>{" "}
+          21:08
+        </li>
+      </ul>
       <div className="row">
         <div className="col-8">
-          <ul>
-            <li className="weather-description">Sonnig</li>
-            <li className="weather-location">
-              Bournemouth, Bournemouth, England, United Kingdom
-            </li>
-            <li className="weather-location">Montag, 16:40</li>
-            <li className="weather-data">
-              Niederschlag: 0% | Wind: 20 km/h | Luftfeuchtigkeit: 40%
-            </li>
-            <li className="weather-data">
-              05:03{" "}
-              <img
-                src="https://tse1.mm.bing.net/th?id=OIP.vasXASdmljtoBvFafLSiDwHaHa&pid=Api"
-                alt="Sunrise & Sunset"
-                className="sunrise-sunset"
-              ></img>{" "}
-              21:08
-            </li>
-          </ul>
-        </div>
-        <div className="col-4">
           <img
             src="https://cdn.onlinewebfonts.com/svg/img_7130.png"
             alt="Weather icon sunny"
-            className="current-weather"
+            className="current-weather mt-3 mb-3 me-3 align-center"
           ></img>
+          <h2 className="align-middle">
+            19<span className="unit align-top">°C</span>
+          </h2>
+        </div>
+        <div className="col-4">
+          <ul>
+            <li className="weather-data">Niederschlag: 0%</li>
+            <li className="weather-data"> Wind: 20 km/h</li>
+            <li className="weather-data">Luftfeuchtigkeit: 40%</li>
+          </ul>
         </div>
       </div>
     </div>
