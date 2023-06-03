@@ -7,7 +7,7 @@ import Weather from "./Weather.js";
 function App() {
   return (
     <div className="App container">
-      <Weather />
+      <Weather defaultCity="Bournemouth" />
       <footer>
         This page was coded by Kat Haas 🐰 and is{" "}
         <a
