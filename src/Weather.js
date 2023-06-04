@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { MagnifyingGlass } from "react-loader-spinner";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -12,7 +14,7 @@ export default function Weather(props) {
       country: response.data.country,
       description: response.data.condition.description,
       temperature: Math.round(response.data.temperature.current),
-      time: response.data.time,
+      date: new Date(response.data.time * 1000),
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.temperature.humidity,
       iconUrl: response.data.condition.icon_url,
@@ -50,7 +52,9 @@ export default function Weather(props) {
           <li className="weather-description, text-capitalize">
             {weatherData.description}
           </li>
-          <li className="weather-description">{weatherData.time}</li>
+          <li className="weather-description">
+            <FormattedDate date={weatherData.date} />
+          </li>
         </ul>
         <div className="row">
           <div className="col-8">
@@ -80,6 +84,19 @@ export default function Weather(props) {
     let unit = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
-    return "Loading...";
+    return (
+      <div className="text-center">
+        <MagnifyingGlass
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="MagnifyingGlass-loading"
+          wrapperStyle={{}}
+          wrapperClass="MagnifyingGlass-wrapper"
+          glassColor="#c0efff"
+          color="#0DCAF0"
+        />
+      </div>
+    );
   }
 }
