@@ -18,21 +18,20 @@ export default function Weather(props) {
       date: new Date(response.data.time * 1000),
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.temperature.humidity,
-      iconUrl: response.data.condition.icon_url,
       icon: response.data.condition.icon,
     });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    search(city);
   }
 
   function handleCityChange(event) {
     setCity(event.target.value);
   }
 
-  function search() {
+  function search(city) {
     const apiKey = "f552o2btc343e2d6edd4e830ffa6cab0";
     let unit = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
@@ -67,7 +66,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    search();
+    search(city);
     return (
       <div className="text-center">
         <MagnifyingGlass

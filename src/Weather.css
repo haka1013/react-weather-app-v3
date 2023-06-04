@@ -10,14 +10,16 @@
   font-weight: 500;
 }
 
-.Weather h2 {
+.Weather .temperature {
   font-size: 60px;
   font-weight: 500;
-  display: inline;
+  margin-left: 10px;
 }
 
 .Weather .unit {
   font-size: 20px;
+  position: relative;
+  top: -12px;
 }
 
 .Weather ul {
@@ -29,13 +31,4 @@
 
 .Weather .weather-data {
   color: rgb(108, 108, 108);
-}
-
-.Weather .current-weather {
-  width: 60px;
-  display: inline;
-}
-
-.Weather .sunrise-sunset {
-  width: 30px;
 }

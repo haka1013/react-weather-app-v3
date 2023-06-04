@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
   return (
@@ -17,17 +18,15 @@ export default function WeatherInfo(props) {
       </ul>
       <div className="row">
         <div className="col-8">
-          <img
-            src={props.data.iconUrl}
-            alt={props.data.icon}
-            className="current-weather mt-3 mb-3 me-3 align-center"
-          ></img>
-          <h2 className="align-middle">
+          <span className="align-middle">
+            <WeatherIcon code={props.data.icon} />
+          </span>
+          <span className="temperature align-middle">
             {props.data.temperature}
-            <span className="unit align-top">°C</span>
-          </h2>
+          </span>
+          <span className="unit">°C</span>
         </div>
-        <div className="col-4">
+        <div className="col-4 d-flex align-items-center">
           <ul>
             <li className="weather-data"> Wind: {props.data.wind} km/h</li>
             <li className="weather-data">Humidity: {props.data.humidity} %</li>
