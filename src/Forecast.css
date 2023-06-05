@@ -1,0 +1,13 @@
+.Forecast {
+  text-align: center;
+}
+
+.Forecast .max-temp,
+.Forecast .min-temp {
+  font-weight: 700;
+}
+
+.Forecast .min-temp,
+.Forecast .day {
+  color: rgb(108, 108, 108);
+}
