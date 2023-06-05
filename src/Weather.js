@@ -6,8 +6,8 @@ import Forecast from "./Forecast";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -21,25 +21,28 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       icon: response.data.condition.icon,
     });
+    console.log("Handle Response");
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    search(city);
+    search();
   }
 
   function handleCityChange(event) {
     setCity(event.target.value);
   }
 
-  function search(city) {
+  function search() {
     const apiKey = "f552o2btc343e2d6edd4e830ffa6cab0";
     let unit = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
+    console.log("Search");
   }
 
   if (weatherData.ready) {
+    console.log("If");
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
@@ -64,11 +67,12 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <Forecast />
+        {/*<Forecast city={weatherData.city} />*/}
       </div>
     );
   } else {
-    search(city);
+    console.log("Else");
+    search();
     return (
       <div className="text-center">
         <MagnifyingGlass
