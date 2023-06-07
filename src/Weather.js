@@ -21,28 +21,25 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       icon: response.data.condition.icon,
     });
-    console.log("Handle Response");
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    search(city);
   }
 
   function handleCityChange(event) {
     setCity(event.target.value);
   }
 
-  function search() {
+  function search(city) {
     const apiKey = "f552o2btc343e2d6edd4e830ffa6cab0";
     let unit = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
-    console.log("Search");
   }
 
   if (weatherData.ready) {
-    console.log("If");
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
@@ -67,12 +64,11 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        {/*<Forecast city={weatherData.city} />*/}
+        <Forecast city={weatherData.city} />
       </div>
     );
   } else {
-    console.log("Else");
-    search();
+    search(city);
     return (
       <div className="text-center">
         <MagnifyingGlass
