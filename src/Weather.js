@@ -9,24 +9,33 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   const codeMapping = {
-    "clear-sky-day": "url(/img/clear-sky-day.png)",
-    "clear-sky-night": "url(/img/clear-sky-night.png)",
-    "few-clouds-day": "url(/img/clear-sky-day.png)",
-    "few-clouds-night": "url(/img/clear-sky-night.png)",
-    "scattered-clouds-day": "url(/img/clouds-day.png)",
-    "scattered-clouds-night": "url(/img/clouds-night.png)",
-    "broken-clouds-day": "url(/img/clouds-day.png)",
-    "broken-clouds-night": "url(/img/clouds-night.png)",
-    "shower-rain-day": "url(/img/rain-day.png)",
-    "shower-rain-night": "url(/img/rain-night.png)",
-    "rain-day": "url(/img/rain-day.png)",
-    "rain-night": "url(/img/rain-night.png)",
-    "thunderstorm-day": "url(/img/rain-day.png)",
-    "thunderstorm-night": "url(/img/rain-night.png)",
-    "snow-day": "url(/img/rain-day.png)",
-    "snow-night": "url(/img/rain-night.png)",
-    "mist-day": "url(/img/rain-day.png)",
-    "mist-night": "url(/img/rain-night.png)",
+    "clear-sky-day": { url: "url(/img/clear-sky-day.png)", color: "black" },
+    "clear-sky-night": { url: "url(/img/clear-sky-night.png)", color: "black" },
+    "few-clouds-day": { url: "url(/img/clear-sky-day.png)", color: "black" },
+    "few-clouds-night": {
+      url: "url(/img/clear-sky-night.png)",
+      color: "black",
+    },
+    "scattered-clouds-day": { url: "url(/img/clouds-day.png)", color: "black" },
+    "scattered-clouds-night": {
+      url: "url(/img/clouds-night.png)",
+      color: "black",
+    },
+    "broken-clouds-day": { url: "url(/img/clouds-day.png)", color: "black" },
+    "broken-clouds-night": {
+      url: "url(/img/clouds-night.png)",
+      color: "black",
+    },
+    "shower-rain-day": { url: "url(/img/rain-day.png)", color: "black" },
+    "shower-rain-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "rain-day": { url: "url(/img/rain-day.png)", color: "black" },
+    "rain-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "thunderstorm-day": { url: "url(/img/rain-day.png)", color: "black" },
+    "thunderstorm-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "snow-day": { url: "url(/img/rain-day.png)", color: "black" },
+    "snow-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "mist-day": { url: "url(/img/rain-day.png)", color: "black" },
+    "mist-night": { url: "url(/img/rain-night.png)", color: "black" },
   };
 
   function handleResponse(response) {
@@ -41,7 +50,8 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       icon: response.data.condition.icon,
       background: {
-        backgroundImage: codeMapping[response.data.condition.icon],
+        backgroundImage: codeMapping[response.data.condition.icon].url,
+        color: codeMapping[response.data.condition.icon].color,
       },
     });
   }
