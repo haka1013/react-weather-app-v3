@@ -40,7 +40,7 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.temperature.humidity,
       icon: response.data.condition.icon,
-      backgound: {
+      background: {
         backgroundImage: "url(/img/clear-sky-day.png)",
       },
     });
