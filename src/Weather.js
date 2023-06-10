@@ -10,32 +10,50 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const codeMapping = {
     "clear-sky-day": { url: "url(/img/clear-sky-day.png)", color: "black" },
-    "clear-sky-night": { url: "url(/img/clear-sky-night.png)", color: "black" },
+    "clear-sky-night": {
+      url: "url(/img/clear-sky-night.png)",
+      color: " rgb(212, 212, 178)",
+    },
     "few-clouds-day": { url: "url(/img/clear-sky-day.png)", color: "black" },
     "few-clouds-night": {
       url: "url(/img/clear-sky-night.png)",
-      color: "black",
+      color: " rgb(212, 212, 178)",
     },
     "scattered-clouds-day": { url: "url(/img/clouds-day.png)", color: "black" },
     "scattered-clouds-night": {
       url: "url(/img/clouds-night.png)",
-      color: "black",
+      color: " rgb(212, 212, 178)",
     },
     "broken-clouds-day": { url: "url(/img/clouds-day.png)", color: "black" },
     "broken-clouds-night": {
       url: "url(/img/clouds-night.png)",
-      color: "black",
+      color: " rgb(212, 212, 178)",
     },
     "shower-rain-day": { url: "url(/img/rain-day.png)", color: "black" },
-    "shower-rain-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "shower-rain-night": {
+      url: "url(/img/rain-night.png)",
+      color: "lightgoldenrodyellow",
+    },
     "rain-day": { url: "url(/img/rain-day.png)", color: "black" },
-    "rain-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "rain-night": {
+      url: "url(/img/rain-night.png)",
+      color: "lightgoldenrodyellow",
+    },
     "thunderstorm-day": { url: "url(/img/rain-day.png)", color: "black" },
-    "thunderstorm-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "thunderstorm-night": {
+      url: "url(/img/rain-night.png)",
+      color: "lightgoldenrodyellow",
+    },
     "snow-day": { url: "url(/img/rain-day.png)", color: "black" },
-    "snow-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "snow-night": {
+      url: "url(/img/rain-night.png)",
+      color: " lightgoldenrodyellow",
+    },
     "mist-day": { url: "url(/img/rain-day.png)", color: "black" },
-    "mist-night": { url: "url(/img/rain-night.png)", color: "black" },
+    "mist-night": {
+      url: "url(/img/rain-night.png)",
+      color: "lightgoldenrodyellow",
+    },
   };
 
   function handleResponse(response) {

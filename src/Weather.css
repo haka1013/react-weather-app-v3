@@ -3,8 +3,6 @@
   border-radius: 10px;
   padding: 16px;
   margin: 20px 40px;
-  text-shadow: -0.5px -0.5px 0px lightgrey, 0.5px -0.5px 0px lightgrey,
-    -0.5px 0.5px 0px lightgrey, 0.5px 0.5px 0px lightgrey;
 }
 
 .Weather h1 {
@@ -29,8 +27,4 @@
   padding: 0;
   font-size: 16px;
   margin: 0;
-}
-
-.Weather .weather-data {
-  color: rgb(108, 108, 108);
 }
