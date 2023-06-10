@@ -40,8 +40,13 @@ export default function Weather(props) {
   }
 
   if (weatherData.ready) {
+    let background = {
+      backgroundImage: {
+        backgroundImage: "url(/img/clear-sky-day.png)",
+      },
+    };
     return (
-      <div className="Weather">
+      <div className="Weather" style={background}>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
