@@ -8,6 +8,9 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const background = {
+    backgroundImage: "url(/img/clear-sky-day.png)",
+  };
 
   function handleResponse(response) {
     setWeatherData({
@@ -40,11 +43,6 @@ export default function Weather(props) {
   }
 
   if (weatherData.ready) {
-    let background = {
-      backgroundImage: {
-        backgroundImage: "url(/img/clear-sky-day.png)",
-      },
-    };
     return (
       <div className="Weather" style={background}>
         <form onSubmit={handleSubmit}>
