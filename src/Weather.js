@@ -10,23 +10,23 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const codeMapping = {
     "clear-sky-day": "url(/img/clear-sky-day.png)",
-    "clear-sky-night": "url(/img/clear-sky-day.png)",
+    "clear-sky-night": "url(/img/clear-sky-night.png)",
     "few-clouds-day": "url(/img/clear-sky-day.png)",
-    "few-clouds-night": "url(/img/clear-sky-day.png)",
-    "scattered-clouds-day": "url(/img/clear-sky-day.png)",
-    "scattered-clouds-night": "url(/img/clear-sky-day.png)",
-    "broken-clouds-day": "url(/img/clear-sky-day.png)",
-    "broken-clouds-night": "url(/img/clear-sky-day.png)",
-    "shower-rain-day": "url(/img/clear-sky-day.png)",
-    "shower-rain-night": "url(/img/clear-sky-day.png)",
-    "rain-day": "url(/img/clear-sky-day.png)",
-    "rain-night": "url(/img/clear-sky-day.png)",
-    "thunderstorm-day": "url(/img/clear-sky-day.png)",
-    "thunderstorm-night": "url(/img/clear-sky-day.png)",
-    "snow-day": "url(/img/clear-sky-day.png)",
-    "snow-night": "url(/img/clear-sky-day.png)",
-    "mist-day": "url(/img/clear-sky-day.png)",
-    "mist-night": "url(/img/clear-sky-day.png)",
+    "few-clouds-night": "url(/img/clear-sky-night.png)",
+    "scattered-clouds-day": "url(/img/clouds-day.png)",
+    "scattered-clouds-night": "url(/img/clouds-night.png)",
+    "broken-clouds-day": "url(/img/clouds-day.png)",
+    "broken-clouds-night": "url(/img/clouds-night.png)",
+    "shower-rain-day": "url(/img/rain-day.png)",
+    "shower-rain-night": "url(/img/rain-night.png)",
+    "rain-day": "url(/img/rain-day.png)",
+    "rain-night": "url(/img/rain-night.png)",
+    "thunderstorm-day": "url(/img/rain-day.png)",
+    "thunderstorm-night": "url(/img/rain-night.png)",
+    "snow-day": "url(/img/rain-day.png)",
+    "snow-night": "url(/img/rain-night.png)",
+    "mist-day": "url(/img/rain-day.png)",
+    "mist-night": "url(/img/rain-night.png)",
   };
 
   function handleResponse(response) {
@@ -41,7 +41,7 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       icon: response.data.condition.icon,
       background: {
-        backgroundImage: "url(/img/clear-sky-day.png)",
+        backgroundImage: codeMapping[response.data.condition.icon],
       },
     });
   }
