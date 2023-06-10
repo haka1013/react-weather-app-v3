@@ -8,8 +8,25 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  const background = {
-    backgroundImage: "url(/img/clear-sky-day.png)",
+  const codeMapping = {
+    "clear-sky-day": "url(/img/clear-sky-day.png)",
+    "clear-sky-night": "url(/img/clear-sky-day.png)",
+    "few-clouds-day": "url(/img/clear-sky-day.png)",
+    "few-clouds-night": "url(/img/clear-sky-day.png)",
+    "scattered-clouds-day": "url(/img/clear-sky-day.png)",
+    "scattered-clouds-night": "url(/img/clear-sky-day.png)",
+    "broken-clouds-day": "url(/img/clear-sky-day.png)",
+    "broken-clouds-night": "url(/img/clear-sky-day.png)",
+    "shower-rain-day": "url(/img/clear-sky-day.png)",
+    "shower-rain-night": "url(/img/clear-sky-day.png)",
+    "rain-day": "url(/img/clear-sky-day.png)",
+    "rain-night": "url(/img/clear-sky-day.png)",
+    "thunderstorm-day": "url(/img/clear-sky-day.png)",
+    "thunderstorm-night": "url(/img/clear-sky-day.png)",
+    "snow-day": "url(/img/clear-sky-day.png)",
+    "snow-night": "url(/img/clear-sky-day.png)",
+    "mist-day": "url(/img/clear-sky-day.png)",
+    "mist-night": "url(/img/clear-sky-day.png)",
   };
 
   function handleResponse(response) {
@@ -23,6 +40,9 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.temperature.humidity,
       icon: response.data.condition.icon,
+      backgound: {
+        backgroundImage: "url(/img/clear-sky-day.png)",
+      },
     });
   }
 
@@ -44,7 +64,7 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="Weather" style={background}>
+      <div className="Weather" style={weatherData.background}>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
