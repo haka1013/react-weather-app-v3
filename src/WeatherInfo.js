@@ -26,10 +26,10 @@ export default function WeatherInfo(props) {
           </span>
           <span className="unit">°C</span>
         </div>
-        <div className="col-4 d-flex align-items-center">
+        <div className="col-4 d-flex align-items-center weather-data">
           <ul>
-            <li className="weather-data"> Wind: {props.data.wind} km/h</li>
-            <li className="weather-data">Humidity: {props.data.humidity} %</li>
+            <li> Wind: {props.data.wind} km/h</li>
+            <li>Humidity: {props.data.humidity} %</li>
           </ul>
         </div>
       </div>

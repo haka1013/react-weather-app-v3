@@ -9,10 +9,13 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   const codeMapping = {
-    "clear-sky-day": { url: "url(/img/clear-sky-day.png)", color: "black" },
+    "clear-sky-day": {
+      url: "url(/img/clear-sky-day.png)",
+      color: "black",
+    },
     "clear-sky-night": {
       url: "url(/img/clear-sky-night.png)",
-      color: " rgb(212, 212, 178)",
+      color: "rgb(212, 212, 178)",
     },
     "few-clouds-day": { url: "url(/img/clear-sky-day.png)", color: "black" },
     "few-clouds-night": {

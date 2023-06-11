@@ -2,7 +2,10 @@
   text-align: center;
 }
 
-.Forecast .max-temp,
-.Forecast .min-temp {
+.Forecast .max-temp {
   font-weight: 700;
+}
+
+.Forecast .min-temp {
+  font-weight: 500;
 }
